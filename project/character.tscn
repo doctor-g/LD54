@@ -8,13 +8,13 @@ radius = 50.0
 [sub_resource type="CircleShape2D" id="CircleShape2D_2kfd2"]
 radius = 20.0
 
-[node name="Character" type="CharacterBody2D"]
+[node name="Character" type="CharacterBody2D" groups=["player_character"]]
 script = ExtResource("1_a3je6")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_qt8ih")
 
-[node name="Hammer" type="CharacterBody2D" parent="."]
+[node name="Hammer" type="CharacterBody2D" parent="." groups=["hammer"]]
 position = Vector2(116, 0)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hammer"]

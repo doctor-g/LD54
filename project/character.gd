@@ -48,3 +48,11 @@ func _physics_process(delta):
 	
 	# _rotation_speed here is a proxy for "power" being applied
 	position += Vector2(1,0).rotated(_angle_to_hammer) * hammer_mass / mass * _rotation_speed * fudge_factor
+	
+	queue_redraw()
+
+
+func _draw():
+	draw_line(Vector2.ZERO, $Hammer.position, Color.SLATE_GRAY, 4)
+	draw_circle(Vector2.ZERO, $CollisionShape2D.shape.radius, Color.CADET_BLUE)
+	draw_circle($Hammer.position, $Hammer/CollisionShape2D.shape.radius, Color.SLATE_GRAY)
